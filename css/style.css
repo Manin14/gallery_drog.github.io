@@ -1,0 +1,150 @@
+/*font*/
+/*cara daftar kan font*/
+
+@font-face {
+	font-family: 'Alex Brush';
+	src: url (../font/AlexBrush-Regular.tff) format(tff);
+}
+
+/*style utama*/
+body {
+	font:18px/36px 'Alex Brush', 'Arial Narrow', arial, sans-serif;
+	background-image: linear-gradient(red,yellow,green);
+	width: 100%;
+	height: 100%;
+	margin-bottom: 150px;
+}
+
+h1 {
+	font-size: 80px;
+	margin: 50px 0;
+	text-align: center;
+	text-shadow: 4px 4px 2px blue;
+}
+
+.container {
+	width: 600px;
+	background-color: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px blue;
+
+}
+
+.gallery li {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	/*overflow: hidden;*/
+	border:5px solid blue;
+	float: left;
+	margin-right: 20px;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.gallery li span {
+	display: block;
+	width: 120px;
+	height: 120px;
+	background-color: rgba(200,200,200, 0.5);
+	border-radius: 50%;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	line-height: 120px;
+	color: red;
+	opacity: 0;
+}
+
+.gallery li a:hover span {
+	opacity: 1;
+}
+
+.gallery li img {
+	border-radius: 50%;
+
+}
+
+/*untuk mengatasi container collapse*/
+.clear {
+	clear: both;
+}
+
+/*overlay*/
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	
+	background-color: rgba(0,0,0, 0.8);
+	z-index: 9999;
+
+	width: 0;
+	height: 0;
+	overflow: hidden;
+
+	text-align: center;
+	padding: 100px;
+
+	opacity: 0;
+}
+
+.overlay:target {
+	width: auto;
+	height: auto;
+	bottom: 0;
+	right: 0;
+	opacity: 1;
+}
+
+.overlay img {
+	max-height: 100%;
+}
+
+.overlay:target img {
+	animation: zoomDanFade 1s;
+}
+
+/*animasinya*/
+@keyframes zoomDanFade {
+	0% { transform: scale(0);
+	opacity: 0;
+	 }
+
+	100% { transform: scale(1);
+	opacity: 1; }
+}
+
+.close {
+	color: white;
+	background-color: red;
+	padding: 10px;
+	border-radius: 10px;
+	z-index: 500;
+	position: absolute;
+	margin-left: 30%;
+
+}
+
+/*navigasi kanan , kiri*/
+.next {
+	color: white;
+	background-color: blue;
+	border-radius: 10px;
+	padding: 5px;
+	position: absolute;
+	top: 50%;
+	margin-left: 50px;
+}
+
+.prev {
+	color: white;
+	background-color: blue;
+	border-radius: 10px;
+	padding: 5px;
+	position: absolute;
+	top: 50%;
+	margin-left: -100px;
+}
